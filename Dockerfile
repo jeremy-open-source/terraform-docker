@@ -11,7 +11,8 @@ RUN     apt-get update \
             openssh-client \
             gnupg \
             nano \
-            curl
+            curl \
+            jq
 
 # Install Terraform CLI
 RUN     curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add - \
