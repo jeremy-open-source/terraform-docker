@@ -4,6 +4,9 @@ services:
 stages:
   - build
 
+variables:
+  DOCKER_TAG: ubuntu2204
+
 build:
   stage: build
   retry: 0
@@ -17,7 +20,7 @@ build:
       --pull
       --cache-from $CI_REGISTRY_IMAGE:latest
       --tag $CI_REGISTRY_IMAGE:latest
-      --tag $CI_REGISTRY_IMAGE:ubuntu2010
+      --tag $CI_REGISTRY_IMAGE:${DOCKER_TAG}
       .
     - docker push $CI_REGISTRY_IMAGE:latest
-    - docker push $CI_REGISTRY_IMAGE:ubuntu2204
+    - docker push $CI_REGISTRY_IMAGE:${DOCKER_TAG}
