@@ -20,4 +20,4 @@ build:
       --tag $CI_REGISTRY_IMAGE:ubuntu2010
       .
     - docker push $CI_REGISTRY_IMAGE:latest
-    - docker push $CI_REGISTRY_IMAGE:ubuntu2010
+    - docker push $CI_REGISTRY_IMAGE:ubuntu2204
